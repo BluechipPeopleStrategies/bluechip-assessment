@@ -284,9 +284,31 @@ async function submitEmail(){
     errEl.style.display='block';document.getElementById('input-email').classList.add('err');return;
   }
   btn.textContent='Loading...';btn.disabled=true;
+  const a=getArchetype(finalScore);
+  const message=
+    '=== DQI RESULTS ===\n\n'+
+    'Name: '+(name||'Not provided')+'\n'+
+    'Email: '+email+'\n\n'+
+    'SCORE: '+finalScore+'/100\n'+
+    'ARCHETYPE: '+a.name+'\n'+
+    'TAGLINE: '+a.tagline+'\n\n'+
+    '=== SUMMARY ===\n\n'+
+    a.summary+'\n\n'+
+    '=== STRENGTHS ===\n'+
+    a.strengths.map(s=>'• '+s).join('\n')+'\n\n'+
+    '=== WATCH OUTS ===\n'+
+    a.watchouts.map(w=>'• '+w).join('\n')+'\n\n'+
+    '=== NEXT MOVE ===\n\n'+
+    a.next;
   try{
     await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({name:name||'Friend',email,score:finalScore,_subject:'New DQI Submission — BlueChip People Strategies'})});
+      body:JSON.stringify({
+        name:name||'Friend',email,
+        score:finalScore+'/100',
+        archetype:a.name,
+        message,
+        _subject:'DQI: '+finalScore+'/100 — '+a.name+' — '+(name||email),
+      })});
   }catch(e){}
   userName=name;
   showResults();
