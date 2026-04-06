@@ -5,91 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Decision Quality Index | BlueChip People Strategies</title>
   <meta name="description" content="18 questions. 5 minutes. Discover your decision-making archetype." />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:#0A0A0A;color:#E8D5B7;font-family:'DM Sans',Georgia,sans-serif;min-height:100vh}
+    body{background:#FFFFFF;color:#1A1A1A;font-family:'DM Sans',system-ui,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased}
     .screen{display:none;min-height:100vh}.screen.active{display:block}
-    .inner{max-width:560px;margin:0 auto;padding:60px 24px}
-    .gold-bar{position:fixed;top:0;left:0;right:0;height:4px;background:#C8A96E;z-index:100}
-    .eyebrow{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;color:#C8A96E;text-transform:uppercase;margin-bottom:16px;font-weight:500}
-    .headline{font-size:clamp(44px,9vw,64px);font-weight:700;line-height:1.0;margin-bottom:8px;color:#E8D5B7;font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em}
-    .headline .gold{color:#C8A96E}
-    .gold-rule{width:60px;height:2px;background:#C8A96E;margin:20px 0}
-    .body-text{font-size:15px;color:#888;line-height:1.8;margin-bottom:32px;max-width:440px;font-weight:300}
-    .card{background:#111;border:1px solid #222;border-radius:16px;padding:24px;margin-bottom:24px}
-    .card-label{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.35em;color:#C8A96E;text-transform:uppercase;margin-bottom:16px;font-weight:700}
-    .fi{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
-    .fd{color:#C8A96E;font-size:12px;margin-top:3px;flex-shrink:0}
-    .ft{font-size:13px;color:#AAA;line-height:1.6;font-weight:300}
-    .btn-gold{display:block;width:100%;padding:16px 40px;background:#C8A96E;color:#0A0A0A;border:none;border-radius:12px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;letter-spacing:.08em;cursor:pointer;transition:opacity .15s;text-transform:uppercase}
-    .btn-gold:hover{opacity:.88}.btn-gold:disabled{opacity:.6;cursor:not-allowed}
-    .btn-outline{display:block;width:100%;padding:12px;background:transparent;color:#555;border:1px solid #222;border-radius:10px;font-size:12px;font-family:'DM Sans',sans-serif;cursor:pointer;margin-top:12px;letter-spacing:.04em;transition:border-color .15s}
-    .btn-outline:hover{border-color:#444;color:#777}
-    .meta-text{text-align:center;margin-top:16px;font-size:11px;color:#444;font-family:'DM Sans',sans-serif;letter-spacing:.05em}
-    .progress-track{position:fixed;top:0;left:0;right:0;height:4px;background:#1A1A1A;z-index:100}
-    .progress-fill{height:4px;background:#C8A96E;transition:width .4s ease}
-    .assess-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px;padding-top:20px}
-    .assess-brand{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.3em;color:#C8A96E;text-transform:uppercase;font-weight:700}
-    .assess-count{font-size:13px;color:#555;font-family:'DM Sans',sans-serif;font-weight:300}
-    .assess-count span{color:#2A2A2A}
-    .trap-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.3em;color:#555;background:#111;border:1px solid #222;border-radius:6px;padding:4px 12px;margin-bottom:24px;text-transform:uppercase;font-weight:500}
-    .question-text{font-size:clamp(19px,3.8vw,23px);font-weight:600;line-height:1.5;color:#E8D5B7;margin-bottom:48px;transition:opacity .22s ease,transform .22s ease;font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:.01em}
+    .inner{max-width:580px;margin:0 auto;padding:64px 28px}
+
+    /* ── BLUE TOP BAR ── */
+    .top-bar{position:fixed;top:0;left:0;right:0;height:5px;background:#1E3A8A;z-index:100}
+
+    /* ── TYPOGRAPHY ── */
+    .eyebrow{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.4em;color:#1E3A8A;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+    .headline{font-size:clamp(48px,9vw,68px);font-weight:600;line-height:1.0;margin-bottom:10px;color:#1A1A1A;font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em}
+    .headline .blue{color:#1E3A8A}
+    .blue-rule{width:48px;height:3px;background:#1E3A8A;margin:22px 0}
+    .body-text{font-size:16px;color:#555;line-height:1.8;margin-bottom:32px;font-weight:300;max-width:460px}
+
+    /* ── CARDS ── */
+    .card{background:#F5F5F3;border:1px solid #E0DED9;border-radius:14px;padding:24px;margin-bottom:24px}
+    .card-label{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;color:#1E3A8A;text-transform:uppercase;margin-bottom:16px;font-weight:700}
+    .fi{display:flex;gap:12px;margin-bottom:11px;align-items:flex-start}
+    .fd{color:#1E3A8A;font-size:11px;margin-top:4px;flex-shrink:0}
+    .ft{font-size:14px;color:#444;line-height:1.6;font-weight:400}
+
+    /* ── BUTTONS ── */
+    .btn-blue{display:block;width:100%;padding:16px 40px;background:#1E3A8A;color:#FFFFFF;border:none;border-radius:50px;font-size:14px;font-weight:600;font-family:'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer;transition:background .18s;text-transform:uppercase}
+    .btn-blue:hover{background:#162d6e}.btn-blue:disabled{opacity:.6;cursor:not-allowed}
+    .btn-outline{display:block;width:100%;padding:13px;background:transparent;color:#888;border:1px solid #DDD;border-radius:50px;font-size:12px;font-family:'DM Sans',sans-serif;cursor:pointer;margin-top:12px;letter-spacing:.05em;transition:all .15s;text-transform:uppercase;font-weight:500}
+    .btn-outline:hover{border-color:#1E3A8A;color:#1E3A8A}
+    .meta-text{text-align:center;margin-top:18px;font-size:11px;color:#AAA;font-family:'DM Sans',sans-serif;letter-spacing:.05em}
+
+    /* ── PROGRESS ── */
+    .progress-track{position:fixed;top:0;left:0;right:0;height:5px;background:#E0DED9;z-index:100}
+    .progress-fill{height:5px;background:#1E3A8A;transition:width .4s ease}
+
+    /* ── ASSESSMENT ── */
+    .assess-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:44px;padding-top:20px}
+    .assess-brand{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.3em;color:#1E3A8A;text-transform:uppercase;font-weight:600}
+    .assess-count{font-size:13px;color:#BBB;font-family:'DM Sans',sans-serif;font-weight:300}
+    .assess-count strong{color:#1A1A1A;font-weight:600}
+    .trap-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.3em;color:#1E3A8A;background:#EEF1FB;border:1px solid #C8D2F0;border-radius:50px;padding:5px 14px;margin-bottom:22px;text-transform:uppercase;font-weight:600}
+    .question-text{font-size:clamp(20px,3.8vw,25px);font-weight:500;line-height:1.5;color:#1A1A1A;margin-bottom:44px;transition:opacity .22s ease,transform .22s ease;font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:.005em}
     .question-text.fade-out{opacity:0;transform:translateY(8px)}
+
+    /* ── OPTIONS ── */
     .options{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
-    .option-btn{display:flex;align-items:center;gap:16px;padding:15px 20px;border-radius:12px;cursor:pointer;border:1px solid #1E1E1E;background:#111;color:#777;font-family:'DM Sans',sans-serif;font-size:14px;transition:all .15s ease;text-align:left;width:100%;font-weight:400}
-    .option-btn:hover{border-color:#333;color:#AAA;background:#141414}
-    .option-btn.selected{border-color:#C8A96E;background:rgba(200,169,110,.1);color:#C8A96E}
-    .radio-circle{width:26px;height:26px;border-radius:50%;flex-shrink:0;border:1.5px solid #2A2A2A;background:transparent;display:flex;align-items:center;justify-content:center;transition:all .15s ease}
-    .option-btn.selected .radio-circle{border-color:#C8A96E;background:#C8A96E}
-    .radio-inner{width:8px;height:8px;border-radius:50%;background:#0A0A0A;display:none}
+    .option-btn{display:flex;align-items:center;gap:16px;padding:15px 20px;border-radius:12px;cursor:pointer;border:1.5px solid #E8E6E1;background:#FAFAFA;color:#555;font-family:'DM Sans',sans-serif;font-size:14px;transition:all .15s ease;text-align:left;width:100%;font-weight:400}
+    .option-btn:hover{border-color:#1E3A8A;color:#1E3A8A;background:#F0F3FB}
+    .option-btn.selected{border-color:#1E3A8A;background:#EEF1FB;color:#1E3A8A}
+    .radio-circle{width:24px;height:24px;border-radius:50%;flex-shrink:0;border:1.5px solid #CCC;background:#FFF;display:flex;align-items:center;justify-content:center;transition:all .15s ease}
+    .option-btn.selected .radio-circle{border-color:#1E3A8A;background:#1E3A8A}
+    .radio-inner{width:8px;height:8px;border-radius:50%;background:#FFF;display:none}
     .option-btn.selected .radio-inner{display:block}
-    .option-btn.selected .option-label{font-weight:700}
-    .back-btn{background:transparent;border:none;color:#444;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;padding:0;letter-spacing:.04em}
-    .back-btn:hover{color:#666}
-    .input-field{width:100%;background:#111;border:1px solid #222;border-radius:10px;padding:14px 18px;color:#E8D5B7;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;margin-bottom:14px;display:block;font-weight:300}
-    .input-field:focus{border-color:#C8A96E}.input-field.err{border-color:#DA8A8A}
-    .input-field::placeholder{color:#333}
-    .error-msg{font-size:12px;color:#DA8A8A;margin-top:-10px;margin-bottom:14px;font-family:'DM Sans',sans-serif}
-    .privacy-note{display:flex;align-items:flex-start;gap:8px;margin-top:20px}
-    .privacy-text{font-size:11px;color:#444;line-height:1.6;font-family:'DM Sans',sans-serif;font-weight:300}
+    .option-btn.selected .option-label{font-weight:600;color:#1E3A8A}
+    .back-btn{background:transparent;border:none;color:#AAA;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;padding:0;letter-spacing:.04em;text-transform:uppercase;font-weight:500}
+    .back-btn:hover{color:#1E3A8A}
+
+    /* ── FORM INPUTS ── */
+    .input-field{width:100%;background:#FFF;border:1.5px solid #E0DED9;border-radius:10px;padding:14px 18px;color:#1A1A1A;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;margin-bottom:14px;display:block;font-weight:400}
+    .input-field:focus{border-color:#1E3A8A}.input-field.err{border-color:#C0392B}
+    .input-field::placeholder{color:#BBB}
+    .error-msg{font-size:12px;color:#C0392B;margin-top:-10px;margin-bottom:14px;font-family:'DM Sans',sans-serif}
+    .privacy-note{display:flex;align-items:flex-start;gap:10px;margin-top:20px}
+    .privacy-text{font-size:11px;color:#AAA;line-height:1.6;font-family:'DM Sans',sans-serif;font-weight:300}
+
+    /* ── STEP ROWS ── */
     .step-row{display:flex;gap:16px;margin-bottom:18px;align-items:flex-start}
-    .step-num{width:28px;height:28px;border-radius:50%;background:rgba(200,169,110,.12);border:1px solid #C8A96E;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#C8A96E;flex-shrink:0;font-family:'DM Sans',sans-serif}
-    .step-text{font-size:13px;color:#AAA;line-height:1.6;font-family:'DM Sans',sans-serif;padding-top:4px;font-weight:300}
+    .step-num{width:28px;height:28px;border-radius:50%;background:#EEF1FB;border:1.5px solid #1E3A8A;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1E3A8A;flex-shrink:0;font-family:'DM Sans',sans-serif}
+    .step-text{font-size:13px;color:#666;line-height:1.6;font-family:'DM Sans',sans-serif;padding-top:4px;font-weight:400}
+
+    /* ── RESULTS ── */
     .score-row{display:flex;align-items:center;gap:32px;margin-bottom:32px}
     .score-ring-wrap{position:relative;flex-shrink:0}
     .score-ring-wrap svg{transform:rotate(-90deg)}
     .score-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .score-num{font-size:30px;font-weight:700;line-height:1;font-family:'Cormorant Garamond',Georgia,serif}
-    .score-denom{font-size:9px;color:#555;letter-spacing:.1em;font-family:'DM Sans',sans-serif;margin-top:2px}
-    .divider{height:1px;background:#1E1E1E;margin-bottom:28px}
-    .summary-text{font-size:14px;color:#AAA;line-height:1.85;margin-bottom:28px;font-weight:300}
+    .score-num{font-size:32px;font-weight:700;line-height:1;font-family:'Cormorant Garamond',Georgia,serif;color:#1E3A8A}
+    .score-denom{font-size:9px;color:#AAA;letter-spacing:.1em;font-family:'DM Sans',sans-serif;margin-top:2px}
+    .divider{height:1px;background:#E8E6E1;margin-bottom:28px}
+    .summary-text{font-size:15px;color:#444;line-height:1.85;margin-bottom:28px;font-weight:300}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
-    .mini-card{background:#111;border:1px solid #1E1E1E;border-radius:12px;padding:16px}
-    .mini-label{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.35em;text-transform:uppercase;margin-bottom:12px;font-weight:700}
+    .mini-card{background:#F5F5F3;border:1px solid #E0DED9;border-radius:12px;padding:16px}
+    .mini-label{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.4em;text-transform:uppercase;margin-bottom:12px;font-weight:700}
     .mini-item{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start}
-    .mini-dot{font-size:8px;margin-top:4px;flex-shrink:0}
-    .mini-text{font-size:11px;color:#888;line-height:1.5;font-family:'DM Sans',sans-serif;font-weight:300}
-    .next-card{background:#111;border-radius:0 12px 12px 0;padding:20px;margin-bottom:32px}
-    .next-label{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.35em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
-    .next-text{font-size:13px;color:#AAA;line-height:1.75;font-family:'DM Sans',sans-serif;font-weight:300}
-    .cta-card{background:#111;border:1px solid #222;border-radius:16px;padding:24px;margin-bottom:24px;text-align:center}
-    .cta-btn{display:inline-block;background:#C8A96E;color:#0A0A0A;border-radius:10px;padding:12px 28px;font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;font-family:'DM Sans',sans-serif;text-transform:uppercase}
-    .copyright{text-align:center;margin-top:20px;font-size:10px;color:#2A2A2A;font-family:'DM Sans',sans-serif;letter-spacing:.05em}
-    .archetype-name-display{font-size:24px;font-weight:700;color:#E8D5B7;line-height:1.2;font-family:'Cormorant Garamond',Georgia,serif}
-    .archetype-tagline-display{font-size:12px;color:#666;margin-top:4px;font-style:italic;font-family:'DM Sans',sans-serif;font-weight:300;letter-spacing:.03em}
-    @media(max-width:600px){.two-col{grid-template-columns:1fr}.score-row{gap:20px}.inner{padding:48px 20px}}
+    .mini-dot{font-size:8px;margin-top:5px;flex-shrink:0}
+    .mini-text{font-size:12px;color:#666;line-height:1.5;font-family:'DM Sans',sans-serif;font-weight:400}
+    .next-card{background:#EEF1FB;border-left:4px solid #1E3A8A;border-radius:0 12px 12px 0;padding:22px;margin-bottom:32px}
+    .next-label{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.4em;text-transform:uppercase;margin-bottom:10px;font-weight:700;color:#1E3A8A}
+    .next-text{font-size:13px;color:#333;line-height:1.75;font-family:'DM Sans',sans-serif;font-weight:400}
+    .cta-card{background:#1E3A8A;border-radius:16px;padding:28px;margin-bottom:24px;text-align:center}
+    .cta-btn{display:inline-block;background:#FFFFFF;color:#1E3A8A;border-radius:50px;padding:13px 30px;font-size:12px;font-weight:700;letter-spacing:.07em;text-decoration:none;font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:opacity .15s}
+    .cta-btn:hover{opacity:.9}
+    .copyright{text-align:center;margin-top:24px;font-size:10px;color:#CCC;font-family:'DM Sans',sans-serif;letter-spacing:.05em}
+
+    /* ── ARCHETYPE RESULT HEADER ── */
+    .archetype-name-display{font-size:26px;font-weight:600;color:#1A1A1A;line-height:1.2;font-family:'Cormorant Garamond',Georgia,serif}
+    .archetype-tagline-display{font-size:13px;color:#888;margin-top:5px;font-family:'DM Sans',sans-serif;font-weight:300;letter-spacing:.02em}
+
+    /* ── RESULT SCREEN HEADER ── */
+    .result-header-bar{background:#1E3A8A;margin:-64px -28px 40px;padding:36px 28px 28px;position:relative}
+
+    @media(max-width:600px){.two-col{grid-template-columns:1fr}.score-row{gap:20px}.inner{padding:52px 20px}.result-header-bar{margin:-52px -20px 32px;padding:28px 20px 24px}}
   </style>
 </head>
 <body>
 
-<!-- INTRO -->
+<!-- ══ INTRO ══ -->
 <div id="screen-intro" class="screen active">
-  <div class="gold-bar"></div>
+  <div class="top-bar"></div>
   <div class="inner">
     <div class="eyebrow">BlueChip People Strategies</div>
-    <h1 class="headline">Decision<br><span class="gold">Quality</span><br>Index</h1>
-    <div class="gold-rule"></div>
+    <h1 class="headline">Decision<br><span class="blue">Quality</span><br>Index</h1>
+    <div class="blue-rule"></div>
     <p class="body-text">18 questions. 5 minutes. A precise read on how you actually make decisions — and where your thinking breaks down under pressure.</p>
     <div class="card">
       <div class="card-label">You'll discover</div>
@@ -98,19 +125,19 @@
       <div class="fi"><div class="fd">◆</div><div class="ft">The specific traps most likely to derail you</div></div>
       <div class="fi"><div class="fd">◆</div><div class="ft">Personalized next steps to sharpen your thinking</div></div>
     </div>
-    <p style="font-size:12px;color:#555;margin-bottom:28px;line-height:1.7;font-weight:300">Answer based on how you <em style="color:#777;font-style:italic">actually</em> behave — not how you wish you did.</p>
-    <button class="btn-gold" onclick="startAssessment()">Begin Assessment →</button>
+    <p style="font-size:13px;color:#AAA;margin-bottom:28px;line-height:1.7;font-weight:300">Answer based on how you <em style="color:#888;font-style:italic">actually</em> behave — not how you wish you did.</p>
+    <button class="btn-blue" onclick="startAssessment()">Begin Assessment →</button>
     <div class="meta-text">5 archetypes · 18 questions · Free</div>
   </div>
 </div>
 
-<!-- ASSESSMENT -->
+<!-- ══ ASSESSMENT ══ -->
 <div id="screen-assessment" class="screen">
   <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
-  <div class="inner" style="padding-top:48px">
+  <div class="inner" style="padding-top:52px">
     <div class="assess-header">
       <div class="assess-brand">Decision Quality Index</div>
-      <div class="assess-count" id="q-count">1 <span>/ 18</span></div>
+      <div class="assess-count"><strong id="q-num">1</strong> / 18</div>
     </div>
     <div class="trap-badge" id="trap-badge"></div>
     <div class="question-text" id="question-text"></div>
@@ -119,37 +146,37 @@
   </div>
 </div>
 
-<!-- EMAIL GATE -->
+<!-- ══ EMAIL GATE ══ -->
 <div id="screen-gate" class="screen">
-  <div class="gold-bar"></div>
+  <div class="top-bar"></div>
   <div class="inner">
     <div class="eyebrow">BlueChip People Strategies</div>
-    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,5vw,38px);font-weight:700;color:#E8D5B7;line-height:1.25;margin-bottom:14px;letter-spacing:-.01em">
-      Your results are ready.<br><span style="color:#C8A96E;font-style:italic">Verify your email to unlock them.</span>
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(30px,5vw,40px);font-weight:600;color:#1A1A1A;line-height:1.25;margin-bottom:14px;letter-spacing:-.01em">
+      Your results are ready.<br><span style="color:#1E3A8A">Verify your email to unlock them.</span>
     </h2>
-    <p style="font-size:14px;color:#666;line-height:1.8;margin-bottom:32px;font-weight:300">
+    <p style="font-size:15px;color:#666;line-height:1.8;margin-bottom:32px;font-weight:300">
       Enter your details below. We'll send a confirmation email — click the link inside and your Decision Quality Score, archetype, and personalized next steps will be waiting.
     </p>
     <input class="input-field" id="input-name" type="text" placeholder="First name" />
     <input class="input-field" id="input-email" type="email" placeholder="Email address" />
     <div class="error-msg" id="email-error" style="display:none">Please enter a valid email address.</div>
     <div class="error-msg" id="submit-error" style="display:none">Something went wrong. Please try again.</div>
-    <button class="btn-gold" id="gate-btn" onclick="submitEmail()">Send My Results →</button>
+    <button class="btn-blue" id="gate-btn" onclick="submitEmail()">Send My Results →</button>
     <div class="privacy-note">
-      <div style="font-size:14px;color:#2A2A2A;flex-shrink:0">🔒</div>
+      <div style="font-size:14px;color:#CCC;flex-shrink:0">🔒</div>
       <div class="privacy-text">No spam. No selling your data. Confirm your email and we'll send your results plus occasional decision intelligence insights from BlueChip.</div>
     </div>
   </div>
 </div>
 
-<!-- CHECK INBOX -->
+<!-- ══ CHECK INBOX ══ -->
 <div id="screen-inbox" class="screen">
-  <div class="gold-bar"></div>
+  <div class="top-bar"></div>
   <div class="inner" style="padding-top:80px">
     <div style="font-size:52px;margin-bottom:28px">📬</div>
-    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,5vw,42px);font-weight:700;color:#E8D5B7;line-height:1.2;margin-bottom:16px;letter-spacing:-.01em">Check your inbox.</h2>
-    <p style="font-size:15px;color:#888;line-height:1.85;margin-bottom:32px;font-weight:300">
-      We've sent a confirmation email to <strong style="color:#C8A96E;font-weight:500" id="inbox-email-display">your email</strong>.<br><br>
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(30px,5vw,44px);font-weight:600;color:#1A1A1A;line-height:1.2;margin-bottom:16px;letter-spacing:-.01em">Check your inbox.</h2>
+    <p style="font-size:15px;color:#666;line-height:1.85;margin-bottom:32px;font-weight:300">
+      We've sent a confirmation email to <strong style="color:#1E3A8A;font-weight:600" id="inbox-email-display">your email</strong>.<br><br>
       Click the link inside to verify your address and unlock your results.
     </p>
     <div class="card">
@@ -158,55 +185,63 @@
       <div class="step-row"><div class="step-num">2</div><div class="step-text">Click the confirmation link inside the email</div></div>
       <div class="step-row" style="margin-bottom:0"><div class="step-num">3</div><div class="step-text">Your score, archetype, and personalized next steps load automatically</div></div>
     </div>
-    <p style="font-size:12px;color:#3A3A3A;margin-bottom:24px;line-height:1.7;font-family:'DM Sans',sans-serif;font-weight:300">
+    <p style="font-size:12px;color:#BBB;margin-bottom:24px;line-height:1.7;font-family:'DM Sans',sans-serif;font-weight:300">
       Don't see it? Check your spam folder. Still nothing?
-      <span style="color:#C8A96E;cursor:pointer;text-decoration:underline" onclick="showScreen('gate')">Try a different email address.</span>
+      <span style="color:#1E3A8A;cursor:pointer;text-decoration:underline;font-weight:500" onclick="showScreen('gate')">Try a different email address.</span>
     </p>
     <button class="btn-outline" onclick="restart()">Start over</button>
   </div>
 </div>
 
-<!-- RESULTS -->
+<!-- ══ RESULTS ══ -->
 <div id="screen-result" class="screen">
-  <div id="result-top-bar" style="position:fixed;top:0;left:0;right:0;height:4px;z-index:100;background:#C8A96E"></div>
-  <div class="inner">
-    <div style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;color:#444;text-transform:uppercase;margin-bottom:32px;padding-top:20px;font-weight:500">BlueChip People Strategies · Decision Quality Index</div>
-    <div id="result-greeting" style="display:none;font-size:14px;color:#666;margin-bottom:10px;font-family:'DM Sans',sans-serif;font-weight:300"></div>
+  <div class="result-header-bar" id="result-header-bar">
+    <div style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:20px;font-weight:500">BlueChip People Strategies · Decision Quality Index</div>
+    <div id="result-greeting" style="display:none;font-size:14px;color:rgba(255,255,255,.7);margin-bottom:10px;font-family:'DM Sans',sans-serif;font-weight:300"></div>
     <div class="score-row">
       <div class="score-ring-wrap">
-        <svg width="128" height="128" viewBox="0 0 128 128">
-          <circle cx="64" cy="64" r="54" fill="none" stroke="#1A1A1A" stroke-width="8"/>
-          <circle id="score-arc" cx="64" cy="64" r="54" fill="none" stroke="#C8A96E" stroke-width="8"
+        <svg width="120" height="120" viewBox="0 0 128 128">
+          <circle cx="64" cy="64" r="54" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="8"/>
+          <circle id="score-arc" cx="64" cy="64" r="54" fill="none" stroke="#FFFFFF" stroke-width="8"
             stroke-dasharray="339.292" stroke-dashoffset="339.292"
             stroke-linecap="round" style="transition:stroke-dashoffset 1.2s ease"/>
         </svg>
         <div class="score-overlay">
-          <div class="score-num" id="score-display">—</div>
-          <div class="score-denom">/ 100</div>
+          <div id="score-display" style="font-size:30px;font-weight:700;line-height:1;font-family:'Cormorant Garamond',Georgia,serif;color:#FFFFFF">—</div>
+          <div style="font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.1em;font-family:'DM Sans',sans-serif;margin-top:2px">/ 100</div>
         </div>
       </div>
       <div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:9px;color:#555;letter-spacing:.35em;text-transform:uppercase;margin-bottom:8px;font-weight:500">Your archetype</div>
-        <div id="archetype-symbol" style="font-size:30px;margin-bottom:4px"></div>
-        <div class="archetype-name-display" id="archetype-name"></div>
-        <div class="archetype-tagline-display" id="archetype-tagline"></div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.35em;text-transform:uppercase;margin-bottom:8px;font-weight:500">Your archetype</div>
+        <div id="archetype-symbol" style="font-size:28px;margin-bottom:4px;color:#FFFFFF"></div>
+        <div class="archetype-name-display" id="archetype-name" style="color:#FFFFFF"></div>
+        <div class="archetype-tagline-display" id="archetype-tagline" style="color:rgba(255,255,255,.6)"></div>
       </div>
     </div>
+  </div>
+
+  <div class="inner" style="padding-top:8px">
     <div class="divider"></div>
     <div class="summary-text" id="archetype-summary"></div>
     <div class="two-col">
-      <div class="mini-card"><div class="mini-label" style="color:#C8A96E">Strengths</div><div id="strengths-list"></div></div>
-      <div class="mini-card"><div class="mini-label" style="color:#DA8A8A">Watch outs</div><div id="watchouts-list"></div></div>
+      <div class="mini-card">
+        <div class="mini-label" style="color:#1E3A8A">Strengths</div>
+        <div id="strengths-list"></div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-label" style="color:#C0392B">Watch outs</div>
+        <div id="watchouts-list"></div>
+      </div>
     </div>
-    <div class="next-card" id="next-card">
-      <div class="next-label" id="next-label">Your next move</div>
+    <div class="next-card">
+      <div class="next-label">Your next move</div>
       <div class="next-text" id="next-text"></div>
     </div>
     <div class="cta-card">
-      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:700;color:#E8D5B7;margin-bottom:10px;letter-spacing:-.01em">Go deeper on your decision quality</div>
-      <div style="font-size:12px;color:#666;margin-bottom:20px;line-height:1.7;font-family:'DM Sans',sans-serif;font-weight:300">The Think Better. Decide Faster. playbook covers all 6 traps in depth — with real examples, self-checks, and the full Decision Quality Framework.</div>
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:600;color:#FFFFFF;margin-bottom:10px;letter-spacing:-.01em">Go deeper on your decision quality</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:22px;line-height:1.7;font-family:'DM Sans',sans-serif;font-weight:300">The Think Better. Decide Faster. playbook covers all 6 traps in depth — with real examples, self-checks, and the full Decision Quality Framework.</div>
       <a class="cta-btn" href="https://bluechip-people-strategies.com" target="_blank" rel="noreferrer">Get the Playbook — $19</a>
-      <div style="font-size:11px;color:#3A3A3A;margin-top:14px;font-family:'DM Sans',sans-serif;font-weight:300">bluechip-people-strategies.com</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:14px;font-family:'DM Sans',sans-serif;font-weight:300">bluechip-people-strategies.com</div>
     </div>
     <button class="btn-outline" onclick="restart()">Retake the assessment</button>
     <div class="copyright">© BlueChip People Strategies</div>
@@ -235,11 +270,11 @@ const QUESTIONS=[
   {id:18,trap:"Process",reverse:false,text:"I have a consistent process I apply to significant decisions — not just gut instinct."},
 ];
 const ARCHETYPES=[
-  {min:85,max:100,name:"The Strategist",symbol:"♠",color:"#C8A96E",tagline:"Deliberate. Process-driven. Bias-aware.",summary:"You operate with a level of decision discipline that most professionals never develop. You separate process from outcome, manage cognitive traps actively, and bring structured thinking to high-stakes situations. Your decisions aren't always right — but they're defensible, and you learn from both outcomes.",strengths:["Strong process discipline under pressure","Actively seeks contrary evidence before deciding","Evaluates decisions on reasoning, not results"],watchouts:["Overthinking low-stakes decisions","Frustration when others don't apply the same rigour","Analysis paralysis on genuinely uncertain calls"],next:"You're operating at a high level. The next frontier is speed — making sharp decisions faster without sacrificing quality. Consider how you can compress your process for time-sensitive situations."},
-  {min:68,max:84,name:"The Analyst",symbol:"♦",color:"#A8C5DA",tagline:"Thorough. Thoughtful. Occasionally slow.",summary:"You think carefully before deciding and generally avoid the most obvious cognitive traps. Your strength is in gathering and weighing information. Your vulnerability is speed — you can get caught in analysis loops, and under pressure your process sometimes collapses into gut instinct.",strengths:["Strong information-gathering before deciding","Generally aware of your own biases","Comfortable with complexity and nuance"],watchouts:["Slow to decide when speed matters","Process weakens significantly under time pressure","Tendency to over-research rather than act on good-enough information"],next:"Focus on building a faster trap-check habit — a 60-second mental audit you can run even under pressure. The goal isn't perfection, it's defensibility."},
-  {min:50,max:67,name:"The Reactor",symbol:"♣",color:"#C8A96E",tagline:"Fast. Confident. Inconsistently right.",summary:"You decide quickly and often confidently — which is a genuine asset in fast-moving situations. But your consistency is your gap. On good days your instincts serve you well. On bad days, cognitive traps run unchecked and you mistake confidence for competence. Your results are higher-variance than they need to be.",strengths:["Decisive under pressure","Comfortable with ambiguity","High action bias — you move when others freeze"],watchouts:["Sunk cost and loss aversion operating unchecked","Outcome bias — judging past decisions by results, not process","Resistance to slowing down even when stakes are high"],next:"The highest-leverage change you can make: before any significant decision, write down your reasoning in one paragraph. This single habit will catch more errors than any other change."},
-  {min:33,max:49,name:"The Drifter",symbol:"♥",color:"#DA8A8A",tagline:"Cautious. Reactive. Conflict-averse.",summary:"You tend to avoid decisions — especially difficult, high-stakes, or socially uncomfortable ones. This often looks like patience or humility, but it's frequently a form of loss aversion: the pain of making a wrong call feels worse than the cost of not deciding. Others often make decisions for you by default.",strengths:["Low impulsivity — you rarely make rash calls","Sensitive to group dynamics and interpersonal impact","Often the voice of caution in overconfident teams"],watchouts:["Inaction treated as a neutral choice when it isn't","Over-reliance on consensus to avoid ownership","Sunk cost and status quo bias keeping you stuck"],next:"Start small. Pick one low-stakes decision you've been avoiding and make it this week — with a written rationale. Decision-making is a skill, and it atrophies without practice."},
-  {min:0,max:32,name:"The Passenger",symbol:"✦",color:"#888888",tagline:"Reactive. Unaware. High potential.",summary:"Right now, decisions are largely happening to you rather than by you. This isn't a character flaw — it's a skill gap. Most people are never taught to think deliberately about how they decide. The fact that you're here, taking this assessment, already puts you ahead of most.",strengths:["High upside — awareness is the starting point for everything","Openness to learning (you're here)","Less anchored to existing habits than high-scorers"],watchouts:["Cognitive traps operating completely unchecked","Decisions driven by emotion, social pressure, or avoidance","Outcomes being attributed to luck rather than process"],next:"Start with one concept from this assessment — pick the trap that resonated most — and spend one week noticing when it shows up. Awareness before action. That's the whole game at this stage."},
+  {min:85,max:100,name:"The Strategist",symbol:"♠",tagline:"Deliberate. Process-driven. Bias-aware.",summary:"You operate with a level of decision discipline that most professionals never develop. You separate process from outcome, manage cognitive traps actively, and bring structured thinking to high-stakes situations. Your decisions aren't always right — but they're defensible, and you learn from both outcomes.",strengths:["Strong process discipline under pressure","Actively seeks contrary evidence before deciding","Evaluates decisions on reasoning, not results"],watchouts:["Overthinking low-stakes decisions","Frustration when others don't apply the same rigour","Analysis paralysis on genuinely uncertain calls"],next:"You're operating at a high level. The next frontier is speed — making sharp decisions faster without sacrificing quality. Consider how you can compress your process for time-sensitive situations."},
+  {min:68,max:84,name:"The Analyst",symbol:"♦",tagline:"Thorough. Thoughtful. Occasionally slow.",summary:"You think carefully before deciding and generally avoid the most obvious cognitive traps. Your strength is in gathering and weighing information. Your vulnerability is speed — you can get caught in analysis loops, and under pressure your process sometimes collapses into gut instinct.",strengths:["Strong information-gathering before deciding","Generally aware of your own biases","Comfortable with complexity and nuance"],watchouts:["Slow to decide when speed matters","Process weakens significantly under time pressure","Tendency to over-research rather than act on good-enough information"],next:"Focus on building a faster trap-check habit — a 60-second mental audit you can run even under pressure. The goal isn't perfection, it's defensibility."},
+  {min:50,max:67,name:"The Reactor",symbol:"♣",tagline:"Fast. Confident. Inconsistently right.",summary:"You decide quickly and often confidently — which is a genuine asset in fast-moving situations. But your consistency is your gap. On good days your instincts serve you well. On bad days, cognitive traps run unchecked and you mistake confidence for competence. Your results are higher-variance than they need to be.",strengths:["Decisive under pressure","Comfortable with ambiguity","High action bias — you move when others freeze"],watchouts:["Sunk cost and loss aversion operating unchecked","Outcome bias — judging past decisions by results, not process","Resistance to slowing down even when stakes are high"],next:"The highest-leverage change you can make: before any significant decision, write down your reasoning in one paragraph. This single habit will catch more errors than any other change."},
+  {min:33,max:49,name:"The Drifter",symbol:"♥",tagline:"Cautious. Reactive. Conflict-averse.",summary:"You tend to avoid decisions — especially difficult, high-stakes, or socially uncomfortable ones. This often looks like patience or humility, but it's frequently a form of loss aversion: the pain of making a wrong call feels worse than the cost of not deciding. Others often make decisions for you by default.",strengths:["Low impulsivity — you rarely make rash calls","Sensitive to group dynamics and interpersonal impact","Often the voice of caution in overconfident teams"],watchouts:["Inaction treated as a neutral choice when it isn't","Over-reliance on consensus to avoid ownership","Sunk cost and status quo bias keeping you stuck"],next:"Start small. Pick one low-stakes decision you've been avoiding and make it this week — with a written rationale. Decision-making is a skill, and it atrophies without practice."},
+  {min:0,max:32,name:"The Passenger",symbol:"✦",tagline:"Reactive. Unaware. High potential.",summary:"Right now, decisions are largely happening to you rather than by you. This isn't a character flaw — it's a skill gap. Most people are never taught to think deliberately about how they decide. The fact that you're here, taking this assessment, already puts you ahead of most.",strengths:["High upside — awareness is the starting point for everything","Openness to learning (you're here)","Less anchored to existing habits than high-scorers"],watchouts:["Cognitive traps operating completely unchecked","Decisions driven by emotion, social pressure, or avoidance","Outcomes being attributed to luck rather than process"],next:"Start with one concept from this assessment — pick the trap that resonated most — and spend one week noticing when it shows up. Awareness before action. That's the whole game at this stage."},
 ];
 const LABELS=["Never","Rarely","Sometimes","Often","Always"];
 const FORMSPREE="https://formspree.io/f/xjgpjqkl";
@@ -259,7 +294,7 @@ function startAssessment(){current=0;answers={};renderQuestion();showScreen('ass
 function renderQuestion(){
   const q=QUESTIONS[current];
   document.getElementById('progress-fill').style.width=Math.round((current/QUESTIONS.length)*100)+'%';
-  document.getElementById('q-count').innerHTML=(current+1)+' <span>/ 18</span>';
+  document.getElementById('q-num').textContent=current+1;
   document.getElementById('trap-badge').textContent=q.trap;
   document.getElementById('question-text').textContent=q.text;
   document.getElementById('back-btn').style.display=current>0?'block':'none';
@@ -316,22 +351,17 @@ function getArchetype(s){return ARCHETYPES.find(a=>s>=a.min&&s<=a.max)||ARCHETYP
 function showResults(){
   const a=getArchetype(finalScore);
   const circ=2*Math.PI*54;
-  document.getElementById('result-top-bar').style.background=a.color;
   const gr=document.getElementById('result-greeting');
   if(userName){gr.textContent='Here are your results, '+userName.split(' ')[0]+'.';gr.style.display='block';}
   document.getElementById('score-display').textContent=finalScore;
-  document.getElementById('score-display').style.color=a.color;
-  const arc=document.getElementById('score-arc');arc.style.stroke=a.color;
+  const arc=document.getElementById('score-arc');
   setTimeout(()=>{arc.style.strokeDashoffset=circ-(finalScore/100)*circ;},100);
   document.getElementById('archetype-symbol').textContent=a.symbol;
-  document.getElementById('archetype-symbol').style.color=a.color;
   document.getElementById('archetype-name').textContent=a.name;
   document.getElementById('archetype-tagline').textContent=a.tagline;
   document.getElementById('archetype-summary').textContent=a.summary;
-  document.getElementById('strengths-list').innerHTML=a.strengths.map(s=>'<div class="mini-item"><div class="mini-dot" style="color:#C8A96E">◆</div><div class="mini-text">'+s+'</div></div>').join('');
-  document.getElementById('watchouts-list').innerHTML=a.watchouts.map(w=>'<div class="mini-item"><div class="mini-dot" style="color:#DA8A8A">◆</div><div class="mini-text">'+w+'</div></div>').join('');
-  document.getElementById('next-card').style.borderLeft='3px solid '+a.color;
-  document.getElementById('next-label').style.color=a.color;
+  document.getElementById('strengths-list').innerHTML=a.strengths.map(s=>'<div class="mini-item"><div class="mini-dot" style="color:#1E3A8A">◆</div><div class="mini-text">'+s+'</div></div>').join('');
+  document.getElementById('watchouts-list').innerHTML=a.watchouts.map(w=>'<div class="mini-item"><div class="mini-dot" style="color:#C0392B">◆</div><div class="mini-text">'+w+'</div></div>').join('');
   document.getElementById('next-text').textContent=a.next;
   showScreen('result');
 }
